@@ -7,8 +7,12 @@
 <body>
 {% include header.html %}
 <main>
-    {{ site.env.CUSTOM_TITLE }}
     {{ content }}
+    <ul>
+        {% for item in site.data.nav %}
+        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
 </main>
 {% include footer.html %}
 </body>
