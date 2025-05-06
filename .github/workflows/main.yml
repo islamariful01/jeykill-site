@@ -25,6 +25,9 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env:
+      CUSTOM_TITLE: "My Custom Title"  # 👈 Environment variable
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
