@@ -1,7 +1,13 @@
-<header>
-    <h1>{{ site.title }}</h1>
-    <nav>
-        <a href="/">Home</a> |
-        <a href="/about.html">About</a>
-    </nav>
-</header>
+<!-- Sticky Menu -->
+<div class="ui menu sticky">
+    <div class="header item">My Site</div>
+    <div class="ui dropdown item">
+        Select Page <i class="dropdown icon"></i>
+        <div class="menu">
+            {% for item in site.data.nav %}
+            <div class="item" data-src="{{ item.url }}">{{ item.title }}</div>
+            <li><a href=""></a></li>
+            {% endfor %}
+        </div>
+    </div>
+</div>

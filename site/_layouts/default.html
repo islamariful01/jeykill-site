@@ -5,17 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
+    <style>
+        body {
+          margin: 0;
+        }
+        .ui.menu.sticky {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+        }
+        .iframe-container {
+          margin-top: 60px;
+          height: calc(100vh - 60px);
+        }
+        iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+        }
+    </style>
+<!--    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">-->
 </head>
 <body>
-<div class="container-lg px-3 my-5 markdown-body">
-    {{ content }}
+{% include header.html %}
 
-    <ul>
-        {% for item in site.data.nav %}
-        <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-        {% endfor %}
-    </ul>
+<!-- iFrame Body -->
+<div class="iframe-container">
+    <iframe id="contentFrame" src="https://example.com"></iframe>
 </div>
+
+{% include footer.html %}
 </body>
 </html>

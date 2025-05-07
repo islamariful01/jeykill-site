@@ -1,3 +1,15 @@
-<footer>
-    <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
-</footer>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+<script>
+    $(document).ready(function() {
+      $('.ui.dropdown').dropdown(); // initialize dropdown
+      $('.ui.menu.sticky').sticky(); // initialize sticky
+
+      // Change iframe src on dropdown item click
+      $('.ui.dropdown .item').on('click', function() {
+        const url = $(this).data('src');
+        $('#contentFrame').attr('src', url);
+      });
+    });
+</script>
